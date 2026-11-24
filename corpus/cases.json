@@ -1,0 +1,1470 @@
+[
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "ユーザー一覧を取得",
+    "code": [
+      "const users = await api.fetchUsers();"
+    ],
+    "source": "synthetic:line-W-01"
+  },
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "合計を計算",
+    "code": [
+      "const total = items.reduce((sum, item) => sum + item.price, 0);"
+    ],
+    "source": "synthetic:line-W-02"
+  },
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "1. 入力の検証",
+    "code": [
+      "if (!input.name) {",
+      "throw new Error('name is required');",
+      "}"
+    ],
+    "source": "synthetic:line-W-03"
+  },
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "2. データベースに保存",
+    "code": [
+      "await db.insert('orders', order);"
+    ],
+    "source": "synthetic:line-W-04"
+  },
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "3. レスポンスを返す",
+    "code": [
+      "return res.json(result);"
+    ],
+    "source": "synthetic:line-W-05"
+  },
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "カウンターを 1 増やす",
+    "code": [
+      "count += 1;"
+    ],
+    "source": "synthetic:line-W-06"
+  },
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "配列を日付順に並べ替え",
+    "code": [
+      "rows.sort((a, b) => a.date - b.date);"
+    ],
+    "source": "synthetic:line-W-07"
+  },
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "ボタンを無効化",
+    "code": [
+      "button.disabled = true;"
+    ],
+    "source": "synthetic:line-W-08"
+  },
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "ログを出力",
+    "code": [
+      "logger.info('saved', { id });"
+    ],
+    "source": "synthetic:line-W-09"
+  },
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "タイマーをクリア",
+    "code": [
+      "clearTimeout(this.timer);"
+    ],
+    "source": "synthetic:line-W-10"
+  },
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "設定を読み込む",
+    "code": [
+      "const config = loadConfig(path);"
+    ],
+    "source": "synthetic:line-W-11"
+  },
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "エラーなら終了",
+    "code": [
+      "if (error) {",
+      "return;",
+      "}"
+    ],
+    "source": "synthetic:line-W-12"
+  },
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "メニューの描画",
+    "code": [
+      "renderMenu(ctx, menuItems);"
+    ],
+    "source": "synthetic:line-W-13"
+  },
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "ヘッダー部分",
+    "code": [
+      "const header = document.createElement('header');"
+    ],
+    "source": "synthetic:line-W-14"
+  },
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "イベントリスナーの登録",
+    "code": [
+      "window.addEventListener('resize', onResize);"
+    ],
+    "source": "synthetic:line-W-15"
+  },
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "結果をキャッシュに保存",
+    "code": [
+      "cache.set(key, value);"
+    ],
+    "source": "synthetic:line-W-16"
+  },
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "各要素を処理",
+    "code": [
+      "for (const item of items) {",
+      "process(item);",
+      "}"
+    ],
+    "source": "synthetic:line-W-17"
+  },
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "文字列を小文字に変換",
+    "code": [
+      "const lower = text.toLowerCase();"
+    ],
+    "source": "synthetic:line-W-18"
+  },
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "状態をリセット",
+    "code": [
+      "this.state = initialState;"
+    ],
+    "source": "synthetic:line-W-19"
+  },
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "幅と高さを取得",
+    "code": [
+      "const { width, height } = canvas.getBoundingClientRect();"
+    ],
+    "source": "synthetic:line-W-20"
+  },
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "パスを結合",
+    "code": [
+      "const fullPath = join(baseDir, fileName);"
+    ],
+    "source": "synthetic:line-W-21"
+  },
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "ファイルを読む",
+    "code": [
+      "const text = await readFile(fullPath, 'utf8');"
+    ],
+    "source": "synthetic:line-W-22"
+  },
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "4. 後片付け",
+    "code": [
+      "connection.close();"
+    ],
+    "source": "synthetic:line-W-23"
+  },
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "マウス座標の更新",
+    "code": [
+      "this.mouse = { x: e.clientX, y: e.clientY };"
+    ],
+    "source": "synthetic:line-W-24"
+  },
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "フラグを立てる",
+    "code": [
+      "this.dirty = true;"
+    ],
+    "source": "synthetic:line-W-25"
+  },
+  {
+    "class": "W",
+    "form": "line",
+    "comment": "リトライ処理",
+    "code": [
+      "for (let i = 0; i < 3; i++) {",
+      "if (await tryOnce()) break;",
+      "}"
+    ],
+    "source": "synthetic:line-W-26"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "Safari は Date.parse で 'YYYY-MM-DD HH:mm' を解釈できないので、先に T 区切りへ直す",
+    "code": [
+      "const iso = raw.replace(' ', 'T');"
+    ],
+    "source": "synthetic:line-K-01"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "splice は元の配列を書き換える。呼び出し元の配列を壊さないよう、先に複製する",
+    "code": [
+      "const copy = [...list];"
+    ],
+    "source": "synthetic:line-K-02"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "この順番を変えない。購読より先に emit すると、最初のイベントを取りこぼす",
+    "code": [
+      "bus.subscribe(handler);"
+    ],
+    "source": "synthetic:line-K-03"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "ID は 1 始まり（0 は「未保存」の意味で使っている）",
+    "code": [
+      "const nextId = lastId + 1;"
+    ],
+    "source": "synthetic:line-K-04"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "座標は左下原点。画面座標（左上原点）とは y の向きが逆",
+    "code": [
+      "const y = height - point.y;"
+    ],
+    "source": "synthetic:line-K-05"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "サーバーは秒で返すが、ここから先はミリ秒で扱う",
+    "code": [
+      "const expiresAt = body.expires_in * 1000;"
+    ],
+    "source": "synthetic:line-K-06"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "fetch は 404 でも reject しない。ok を見ないと失敗を成功として扱ってしまう",
+    "code": [
+      "if (!response.ok) {",
+      "throw new HttpError(response.status);",
+      "}"
+    ],
+    "source": "synthetic:line-K-07"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "同じ参照を返すと再描画されないので、新しいオブジェクトにする",
+    "code": [
+      "setState({ ...state, count: state.count + 1 });"
+    ],
+    "source": "synthetic:line-K-08"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "ここで await すると、ロックを持ったまま待つことになり、デッドロックする",
+    "code": [
+      "void flushQueue();"
+    ],
+    "source": "synthetic:line-K-09"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "JSON.stringify は undefined のキーを落とすので、null に置き換えてから送る",
+    "code": [
+      "const payload = replaceUndefined(form);"
+    ],
+    "source": "synthetic:line-K-10"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "toFixed は文字列を返す。比較の前に数値へ戻す",
+    "code": [
+      "const rounded = Number(value.toFixed(2));"
+    ],
+    "source": "synthetic:line-K-11"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "indexOf は 0 を返すこともあるので、真偽値で判定しない",
+    "code": [
+      "if (text.indexOf(prefix) !== -1) {",
+      "matched = true;",
+      "}"
+    ],
+    "source": "synthetic:line-K-12"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "dispose は二重に呼ばれうる。2 回目は何もしない",
+    "code": [
+      "if (this.disposed) {",
+      "return;",
+      "}"
+    ],
+    "source": "synthetic:line-K-13"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "時刻はすべて UTC で持つ。表示するときだけ利用者のタイムゾーンに直す",
+    "code": [
+      "const createdAt = new Date().toISOString();"
+    ],
+    "source": "synthetic:line-K-14"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "Map の反復は挿入順。この順で画面に並ぶので、並べ替えてから入れる",
+    "code": [
+      "for (const entry of sorted) {",
+      "map.set(entry.id, entry);",
+      "}"
+    ],
+    "source": "synthetic:line-K-15"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "このハンドラは毎フレーム呼ばれる。ここで重い処理をしない",
+    "code": [
+      "this.latest = frame;"
+    ],
+    "source": "synthetic:line-K-16"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "負の値が来ると無限ループになるので、0 で止める",
+    "code": [
+      "const remaining = Math.max(0, budget - used);"
+    ],
+    "source": "synthetic:line-K-17"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "innerHTML に入れると、利用者の入力が HTML として解釈される",
+    "code": [
+      "el.textContent = userInput;"
+    ],
+    "source": "synthetic:line-K-18"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "localStorage はプライベートモードで例外を投げることがある",
+    "code": [
+      "try {",
+      "localStorage.setItem(key, value);",
+      "} catch {",
+      "return;",
+      "}"
+    ],
+    "source": "synthetic:line-K-19"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "右手系。x が右、y が上、z が手前",
+    "code": [
+      "const forward = { x: 0, y: 0, z: -1 };"
+    ],
+    "source": "synthetic:line-K-20"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "添字は 0 始まりだが、表示する番号は 1 始まり",
+    "code": [
+      "const label = `${index + 1} 件目`;"
+    ],
+    "source": "synthetic:line-K-21"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "トークンの失効より少し前に更新する。ぎりぎりだと通信中に失効する",
+    "code": [
+      "const refreshAt = expiresAt - 60_000;"
+    ],
+    "source": "synthetic:line-K-22"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "close イベントは error の後にも必ず来る。片付けは close だけで行う",
+    "code": [
+      "socket.addEventListener('close', cleanup);"
+    ],
+    "source": "synthetic:line-K-23"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "g フラグ付きの正規表現を使い回すと、lastIndex が残って次の test が途中から始まる",
+    "code": [
+      "const pattern = /\\d+/;"
+    ],
+    "source": "synthetic:line-K-24"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "上の行で状態を確定させてから通知する。逆にすると、通知先が古い状態を読む",
+    "code": [
+      "this.emit(\"change\");"
+    ],
+    "source": "synthetic:line-K-25"
+  },
+  {
+    "class": "K",
+    "form": "line",
+    "comment": "符号の約束: 画面の右を向くと正、左を向くと負",
+    "code": [
+      "const yaw = Math.atan2(dx, dz);"
+    ],
+    "source": "synthetic:line-K-26"
+  },
+  {
+    "class": "M",
+    "form": "line",
+    "comment": "ユーザーから要望があったので、CSV でも書き出せるようにする",
+    "code": [
+      "exportCsv(rows);"
+    ],
+    "source": "synthetic:line-M-01"
+  },
+  {
+    "class": "M",
+    "form": "line",
+    "comment": "使いやすさを上げるため、ボタンを大きめにする",
+    "code": [
+      "button.style.padding = '16px';"
+    ],
+    "source": "synthetic:line-M-02"
+  },
+  {
+    "class": "M",
+    "form": "line",
+    "comment": "パフォーマンス改善のためにキャッシュを入れる",
+    "code": [
+      "const cache = new Map<string, Result>();"
+    ],
+    "source": "synthetic:line-M-03"
+  },
+  {
+    "class": "M",
+    "form": "line",
+    "comment": "将来ほかの決済サービスも試せるよう、呼び出しを関数に分けておく",
+    "code": [
+      "const charge = createCharger(provider);"
+    ],
+    "source": "synthetic:line-M-04"
+  },
+  {
+    "class": "M",
+    "form": "line",
+    "comment": "デモで見栄えがよくなるように、アニメーションを付ける",
+    "code": [
+      "el.classList.add('fade-in');"
+    ],
+    "source": "synthetic:line-M-05"
+  },
+  {
+    "class": "M",
+    "form": "line",
+    "comment": "初めての人でも迷わないよう、最初に案内を出す",
+    "code": [
+      "showOnboarding();"
+    ],
+    "source": "synthetic:line-M-06"
+  },
+  {
+    "class": "M",
+    "form": "line",
+    "comment": "待たされている感じを減らすため、読み込み中は進み具合を見せる",
+    "code": [
+      "spinner.show();"
+    ],
+    "source": "synthetic:line-M-07"
+  },
+  {
+    "class": "M",
+    "form": "line",
+    "comment": "【仮説 A】通知を夜に送ると開封率が上がる → 21 時に送る",
+    "code": [
+      "scheduleAt(21);"
+    ],
+    "source": "synthetic:line-M-08"
+  },
+  {
+    "class": "M",
+    "form": "line",
+    "comment": "【仮説 B】説明文を短くすると離脱が減る → 3 行までに切る",
+    "code": [
+      "const summary = lines.slice(0, 3);"
+    ],
+    "source": "synthetic:line-M-09"
+  },
+  {
+    "class": "M",
+    "form": "line",
+    "comment": "営業チームの依頼で、管理画面にも同じ表を出す",
+    "code": [
+      "renderTable(adminRoot, rows);"
+    ],
+    "source": "synthetic:line-M-10"
+  },
+  {
+    "class": "M",
+    "form": "line",
+    "comment": "利用者の集中を切らさないよう、通知は画面の端に小さく出す",
+    "code": [
+      "toast.show(message, { position: 'corner' });"
+    ],
+    "source": "synthetic:line-M-11"
+  },
+  {
+    "class": "M",
+    "form": "line",
+    "comment": "検証を速く回せるよう、設定を画面から切り替えられるようにする",
+    "code": [
+      "settingsPanel.mount(root);"
+    ],
+    "source": "synthetic:line-M-12"
+  },
+  {
+    "class": "M",
+    "form": "line",
+    "comment": "見た目をそろえるため、余白を 8 の倍数にする",
+    "code": [
+      "const gap = 8 * 2;"
+    ],
+    "source": "synthetic:line-M-13"
+  },
+  {
+    "class": "M",
+    "form": "line",
+    "comment": "【仮説 C】相手の顔を見る時間が長いほど会話が続く → 視線の滞在時間を記録する",
+    "code": [
+      "dwellTimes.push(duration);"
+    ],
+    "source": "synthetic:line-M-14"
+  },
+  {
+    "class": "H",
+    "form": "line",
+    "comment": "旧実装は localStorage だったが、タブ間で競合したため sessionStorage にした",
+    "code": [
+      "const saved = sessionStorage.getItem(key);"
+    ],
+    "source": "synthetic:line-H-01"
+  },
+  {
+    "class": "H",
+    "form": "line",
+    "comment": "以前は 500ms 固定だったのを、速度に応じて可変にした",
+    "code": [
+      "const cutoff = minCutoff + beta * speed;"
+    ],
+    "source": "synthetic:line-H-02"
+  },
+  {
+    "class": "H",
+    "form": "line",
+    "comment": "バグ修正: 二重に呼ばれていたのを一度だけにした (#123)",
+    "code": [
+      "if (this.started) {",
+      "return;",
+      "}"
+    ],
+    "source": "synthetic:line-H-03"
+  },
+  {
+    "class": "H",
+    "form": "line",
+    "comment": "もともとここで正規化していたが、呼び出し側へ移した",
+    "code": [
+      "return raw;"
+    ],
+    "source": "synthetic:line-H-04"
+  },
+  {
+    "class": "H",
+    "form": "line",
+    "comment": "v2 で追加。従来の処理は削除した",
+    "code": [
+      "handleV2(event);"
+    ],
+    "source": "synthetic:line-H-05"
+  },
+  {
+    "class": "H",
+    "form": "line",
+    "comment": "2024 年の改修で、ページ送りを無限スクロールに置き換えた",
+    "code": [
+      "observer.observe(sentinel);"
+    ],
+    "source": "synthetic:line-H-06"
+  },
+  {
+    "class": "H",
+    "form": "line",
+    "comment": "前の担当者が入れた回避策は、ライブラリの更新で不要になったので外した",
+    "code": [
+      "render(view);"
+    ],
+    "source": "synthetic:line-H-07"
+  },
+  {
+    "class": "H",
+    "form": "line",
+    "comment": "レビューの指摘を受けて、変数名を短くした",
+    "code": [
+      "const cfg = options.config;"
+    ],
+    "source": "synthetic:line-H-08"
+  },
+  {
+    "class": "N",
+    "form": "line",
+    "comment": "IndexedDB は使わない: Safari のプライベートモードで書き込みが失敗するため",
+    "code": [
+      "const saved = sessionStorage.getItem(key);"
+    ],
+    "source": "synthetic:line-N-01"
+  },
+  {
+    "class": "N",
+    "form": "line",
+    "comment": "状態管理ライブラリは入れない。この規模なら素の関数で足りる",
+    "code": [
+      "let state = initialState;"
+    ],
+    "source": "synthetic:line-N-02"
+  },
+  {
+    "class": "N",
+    "form": "line",
+    "comment": "setTimeout ではなく requestAnimationFrame を使う。タブが裏に回ったら止まってほしいから",
+    "code": [
+      "requestAnimationFrame(tick);"
+    ],
+    "source": "synthetic:line-N-03"
+  },
+  {
+    "class": "N",
+    "form": "line",
+    "comment": "正規表現で一気に分けない。引用符の中のカンマまで切ってしまう",
+    "code": [
+      "const fields = parseCsvLine(line);"
+    ],
+    "source": "synthetic:line-N-04"
+  },
+  {
+    "class": "N",
+    "form": "line",
+    "comment": "Date ではなく performance.now を使う。時計の補正で値が戻ることがあるため",
+    "code": [
+      "const elapsed = performance.now() - startedAt;"
+    ],
+    "source": "synthetic:line-N-05"
+  },
+  {
+    "class": "N",
+    "form": "line",
+    "comment": "ここでは例外にしない。1 件の失敗で一括処理全体を止めたくない",
+    "code": [
+      "failures.push(item.id);"
+    ],
+    "source": "synthetic:line-N-06"
+  },
+  {
+    "class": "N",
+    "form": "line",
+    "comment": "for...in は使わない。プロトタイプのキーまで回ってしまう",
+    "code": [
+      "for (const key of Object.keys(obj)) {",
+      "visit(key);",
+      "}"
+    ],
+    "source": "synthetic:line-N-07"
+  },
+  {
+    "class": "N",
+    "form": "line",
+    "comment": "並列にしない。API の同時接続数の制限に引っかかる",
+    "code": [
+      "for (const id of ids) {",
+      "await sync(id);",
+      "}"
+    ],
+    "source": "synthetic:line-N-08"
+  },
+  {
+    "class": "D",
+    "form": "line",
+    "comment": "タイムアウト（ms）",
+    "code": [
+      "const timeout = 5000;"
+    ],
+    "source": "synthetic:line-D-01"
+  },
+  {
+    "class": "D",
+    "form": "line",
+    "comment": "再試行の上限回数",
+    "code": [
+      "const maxRetries = 3;"
+    ],
+    "source": "synthetic:line-D-02"
+  },
+  {
+    "class": "D",
+    "form": "line",
+    "comment": "1 ページあたりの件数",
+    "code": [
+      "const pageSize = 20;"
+    ],
+    "source": "synthetic:line-D-03"
+  },
+  {
+    "class": "D",
+    "form": "line",
+    "comment": "画面の端からの余白（px）",
+    "code": [
+      "const margin = 16;"
+    ],
+    "source": "synthetic:line-D-04"
+  },
+  {
+    "class": "D",
+    "form": "line",
+    "comment": "直近に受け取った値（未受信なら null）",
+    "code": [
+      "let latest: number | null = null;"
+    ],
+    "source": "synthetic:line-D-05"
+  },
+  {
+    "class": "D",
+    "form": "line",
+    "comment": "経過時間（秒）",
+    "code": [
+      "const elapsedSec = (now - start) / 1000;"
+    ],
+    "source": "synthetic:line-D-06"
+  },
+  {
+    "class": "D",
+    "form": "line",
+    "comment": "しきい値（0〜1）",
+    "code": [
+      "const threshold = 0.6;"
+    ],
+    "source": "synthetic:line-D-07"
+  },
+  {
+    "class": "D",
+    "form": "line",
+    "comment": "選択中の行の番号",
+    "code": [
+      "let selectedIndex = -1;"
+    ],
+    "source": "synthetic:line-D-08"
+  },
+  {
+    "class": "W",
+    "form": "jsdoc",
+    "comment": "/** ユーザーを取得する */",
+    "code": [
+      "public getUser(id: string): User {}"
+    ],
+    "wrap": "class",
+    "source": "synthetic:jsdoc-W-01"
+  },
+  {
+    "class": "W",
+    "form": "jsdoc",
+    "comment": "/** 設定を保存 */",
+    "code": [
+      "public saveSettings(settings: Settings): void {}"
+    ],
+    "wrap": "class",
+    "source": "synthetic:jsdoc-W-02"
+  },
+  {
+    "class": "W",
+    "form": "jsdoc",
+    "comment": "/** 初期化 */",
+    "code": [
+      "public initialize(): void {}"
+    ],
+    "wrap": "class",
+    "source": "synthetic:jsdoc-W-03"
+  },
+  {
+    "class": "W",
+    "form": "jsdoc",
+    "comment": "/** 解放 */",
+    "code": [
+      "public dispose(): void {}"
+    ],
+    "wrap": "class",
+    "source": "synthetic:jsdoc-W-04"
+  },
+  {
+    "class": "W",
+    "form": "jsdoc",
+    "comment": "/** ログを追加 */",
+    "code": [
+      "public addLog(entry: LogEntry): void {}"
+    ],
+    "wrap": "class",
+    "source": "synthetic:jsdoc-W-05"
+  },
+  {
+    "class": "W",
+    "form": "jsdoc",
+    "comment": "/** 合計金額を計算する */",
+    "code": [
+      "export function calculateTotal(items: Item[]): number {}"
+    ],
+    "source": "synthetic:jsdoc-W-06"
+  },
+  {
+    "class": "W",
+    "form": "jsdoc",
+    "comment": "/** ユーザーのクラス */",
+    "code": [
+      "export class User {}"
+    ],
+    "source": "synthetic:jsdoc-W-07"
+  },
+  {
+    "class": "W",
+    "form": "jsdoc",
+    "comment": "/** 設定 */",
+    "code": [
+      "export interface Settings {}"
+    ],
+    "source": "synthetic:jsdoc-W-08"
+  },
+  {
+    "class": "W",
+    "form": "jsdoc",
+    "comment": "/** カートに商品を追加する */",
+    "code": [
+      "public addItem(item: Item): void {}"
+    ],
+    "wrap": "class",
+    "source": "synthetic:jsdoc-W-09"
+  },
+  {
+    "class": "W",
+    "form": "jsdoc",
+    "comment": "/** 画面を描画する */",
+    "code": [
+      "public render(): void {}"
+    ],
+    "wrap": "class",
+    "source": "synthetic:jsdoc-W-10"
+  },
+  {
+    "class": "W",
+    "form": "jsdoc",
+    "comment": "/** タイマーを開始 */",
+    "code": [
+      "private startTimer(): void {}"
+    ],
+    "wrap": "class",
+    "source": "synthetic:jsdoc-W-11"
+  },
+  {
+    "class": "W",
+    "form": "jsdoc",
+    "comment": "/** タイマーを停止 */",
+    "code": [
+      "private stopTimer(): void {}"
+    ],
+    "wrap": "class",
+    "source": "synthetic:jsdoc-W-12"
+  },
+  {
+    "class": "W",
+    "form": "jsdoc",
+    "comment": "/** 名前を返す */",
+    "code": [
+      "public get name(): string {}"
+    ],
+    "wrap": "class",
+    "source": "synthetic:jsdoc-W-13"
+  },
+  {
+    "class": "W",
+    "form": "jsdoc",
+    "comment": "/** ボタンのクリックを処理する */",
+    "code": [
+      "private handleClick(event: MouseEvent): void {}"
+    ],
+    "wrap": "class",
+    "source": "synthetic:jsdoc-W-14"
+  },
+  {
+    "class": "W",
+    "form": "jsdoc",
+    "comment": "/** 注文の一覧 */",
+    "code": [
+      "export type OrderList = Order[];"
+    ],
+    "source": "synthetic:jsdoc-W-15"
+  },
+  {
+    "class": "W",
+    "form": "jsdoc",
+    "comment": "/** 接続を閉じる */",
+    "code": [
+      "public close(): void {}"
+    ],
+    "wrap": "class",
+    "source": "synthetic:jsdoc-W-16"
+  },
+  {
+    "class": "W",
+    "form": "jsdoc",
+    "comment": "/** データを読み込む */",
+    "code": [
+      "export async function loadData(): Promise<Data> {}"
+    ],
+    "source": "synthetic:jsdoc-W-17"
+  },
+  {
+    "class": "W",
+    "form": "jsdoc",
+    "comment": "/** メッセージを送信する */",
+    "code": [
+      "public send(message: Message): void {}"
+    ],
+    "wrap": "class",
+    "source": "synthetic:jsdoc-W-18"
+  },
+  {
+    "class": "W",
+    "form": "jsdoc",
+    "comment": "/** 最大値 */",
+    "code": [
+      "export const MAX_VALUE = 100;"
+    ],
+    "source": "synthetic:jsdoc-W-19"
+  },
+  {
+    "class": "W",
+    "form": "jsdoc",
+    "comment": "/** ユーザー ID */",
+    "code": [
+      "userId: string;"
+    ],
+    "wrap": "interface",
+    "source": "synthetic:jsdoc-W-20"
+  },
+  {
+    "class": "W",
+    "form": "jsdoc",
+    "comment": "/** 作成日時 */",
+    "code": [
+      "createdAt: Date;"
+    ],
+    "wrap": "interface",
+    "source": "synthetic:jsdoc-W-21"
+  },
+  {
+    "class": "W",
+    "form": "jsdoc",
+    "comment": "/** フォームの値を検証する */",
+    "code": [
+      "export function validateForm(values: FormValues): boolean {}"
+    ],
+    "source": "synthetic:jsdoc-W-22"
+  },
+  {
+    "class": "W",
+    "form": "jsdoc",
+    "comment": "/** キャッシュをクリアする */",
+    "code": [
+      "public clearCache(): void {}"
+    ],
+    "wrap": "class",
+    "source": "synthetic:jsdoc-W-23"
+  },
+  {
+    "class": "W",
+    "form": "jsdoc",
+    "comment": "/** 現在のページ番号 */",
+    "code": [
+      "private currentPage = 1;"
+    ],
+    "wrap": "class",
+    "source": "synthetic:jsdoc-W-24"
+  },
+  {
+    "class": "K",
+    "form": "jsdoc",
+    "comment": "/** 利用者がログインした直後に 1 回だけ呼ぶ。2 回目以降は何もしない */",
+    "code": [
+      "public onLogin(): void {}"
+    ],
+    "wrap": "class",
+    "source": "synthetic:jsdoc-K-01"
+  },
+  {
+    "class": "K",
+    "form": "jsdoc",
+    "comment": "/** subscribe より前に呼ぶと、最初の通知を取りこぼす */",
+    "code": [
+      "public start(): void {}"
+    ],
+    "wrap": "class",
+    "source": "synthetic:jsdoc-K-02"
+  },
+  {
+    "class": "K",
+    "form": "jsdoc",
+    "comment": "/** 失敗しても例外を投げず、空の配列を返す。呼び出し側は失敗と「0 件」を区別できない */",
+    "code": [
+      "export async function fetchTags(): Promise<string[]> {}"
+    ],
+    "source": "synthetic:jsdoc-K-03"
+  },
+  {
+    "class": "K",
+    "form": "jsdoc",
+    "comment": "/** 同じキーで並行に呼ばれると、後から終わった方の値だけが残る */",
+    "code": [
+      "public async save(key: string, value: string): Promise<void> {}"
+    ],
+    "wrap": "class",
+    "source": "synthetic:jsdoc-K-04"
+  },
+  {
+    "class": "K",
+    "form": "jsdoc",
+    "comment": "/** メインスレッドを 100ms ほど止める。描画の途中で呼ばない */",
+    "code": [
+      "export function rebuildIndex(): void {}"
+    ],
+    "source": "synthetic:jsdoc-K-05"
+  },
+  {
+    "class": "K",
+    "form": "jsdoc",
+    "comment": "/** 返す配列は、時刻の古い順に並んでいる */",
+    "code": [
+      "export function history(): Entry[] {}"
+    ],
+    "source": "synthetic:jsdoc-K-06"
+  },
+  {
+    "class": "K",
+    "form": "jsdoc",
+    "comment": "/** 引数の配列をその場で並べ替える（複製しない） */",
+    "code": [
+      "export function sortInPlace(rows: Row[]): void {}"
+    ],
+    "source": "synthetic:jsdoc-K-07"
+  },
+  {
+    "class": "K",
+    "form": "jsdoc",
+    "comment": "/** 呼ぶたびに新しい接続を開く。使い終わったら必ず close する */",
+    "code": [
+      "export function openConnection(url: string): Connection {}"
+    ],
+    "source": "synthetic:jsdoc-K-08"
+  },
+  {
+    "class": "K",
+    "form": "jsdoc",
+    "comment": "/** dispose の後に呼ぶと例外になる */",
+    "code": [
+      "public update(delta: number): void {}"
+    ],
+    "wrap": "class",
+    "source": "synthetic:jsdoc-K-09"
+  },
+  {
+    "class": "K",
+    "form": "jsdoc",
+    "comment": "/** 空の配列を渡すと NaN を返す */",
+    "code": [
+      "export function average(values: number[]): number {}"
+    ],
+    "source": "synthetic:jsdoc-K-10"
+  },
+  {
+    "class": "K",
+    "form": "jsdoc",
+    "comment": "/** 結果は最大 5 分古いことがある（サーバー側でキャッシュしている） */",
+    "code": [
+      "export async function fetchRanking(): Promise<Rank[]> {}"
+    ],
+    "source": "synthetic:jsdoc-K-11"
+  },
+  {
+    "class": "K",
+    "form": "jsdoc",
+    "comment": "/** 変更は次のタスクで反映される。呼んだ直後には、まだ状態が変わっていない */",
+    "code": [
+      "public requestRefresh(): void {}"
+    ],
+    "wrap": "class",
+    "source": "synthetic:jsdoc-K-12"
+  },
+  {
+    "class": "K",
+    "form": "jsdoc",
+    "comment": "/** 区切りには / を使うこと。Windows でもバックスラッシュは受け付けない */",
+    "code": [
+      "export function readAsset(path: string): Promise<string> {}"
+    ],
+    "source": "synthetic:jsdoc-K-13"
+  },
+  {
+    "class": "K",
+    "form": "jsdoc",
+    "comment": "/** 利用者の入力をそのまま渡さない。HTML として解釈される */",
+    "code": [
+      "export function setHtml(el: HTMLElement, html: string): void {}"
+    ],
+    "source": "synthetic:jsdoc-K-14"
+  },
+  {
+    "class": "K",
+    "form": "jsdoc",
+    "comment": "/** 返すのは文字数からの見積もりで、実測ではない */",
+    "code": [
+      "export function estimateDuration(text: string): number {}"
+    ],
+    "source": "synthetic:jsdoc-K-15"
+  },
+  {
+    "class": "K",
+    "form": "jsdoc",
+    "comment": "/** 一度 true になったら false には戻らない */",
+    "code": [
+      "private connected = false;"
+    ],
+    "wrap": "class",
+    "source": "synthetic:jsdoc-K-16"
+  },
+  {
+    "class": "K",
+    "form": "jsdoc",
+    "comment": "/** onChange を同期的に呼ぶことがある。呼び出し側は再入に備える */",
+    "code": [
+      "public setValue(value: string): void {}"
+    ],
+    "wrap": "class",
+    "source": "synthetic:jsdoc-K-17"
+  },
+  {
+    "class": "K",
+    "form": "jsdoc",
+    "comment": "/** 同じ入力には同じ値を返す（乱数の種を入力から作る） */",
+    "code": [
+      "export function avatarColor(userId: string): string {}"
+    ],
+    "source": "synthetic:jsdoc-K-18"
+  },
+  {
+    "class": "T",
+    "form": "jsdoc",
+    "comment": "/** タイムアウト（ms） */",
+    "code": [
+      "export const TIMEOUT = 5000;"
+    ],
+    "source": "synthetic:jsdoc-T-01"
+  },
+  {
+    "class": "T",
+    "form": "jsdoc",
+    "comment": "/** 待ち時間（秒） */",
+    "code": [
+      "public delay = 3;"
+    ],
+    "wrap": "class",
+    "source": "synthetic:jsdoc-T-02"
+  },
+  {
+    "class": "T",
+    "form": "jsdoc",
+    "comment": "/** 'asc' か 'desc' のどちらか */",
+    "code": [
+      "export function sortBy(order: string): void {}"
+    ],
+    "source": "synthetic:jsdoc-T-03"
+  },
+  {
+    "class": "T",
+    "form": "jsdoc",
+    "comment": "/** 戻り値の配列は書き換えないこと */",
+    "code": [
+      "public getItems(): Item[] {}"
+    ],
+    "wrap": "class",
+    "source": "synthetic:jsdoc-T-04"
+  },
+  {
+    "class": "T",
+    "form": "jsdoc",
+    "comment": "/** 見つからなければ undefined を返す */",
+    "code": [
+      "export function findUser(id: string): User {}"
+    ],
+    "source": "synthetic:jsdoc-T-05"
+  },
+  {
+    "class": "T",
+    "form": "jsdoc",
+    "comment": "/** flag が true なら昇順 */",
+    "code": [
+      "export function sortRows(rows: Row[], flag: boolean): Row[] {}"
+    ],
+    "source": "synthetic:jsdoc-T-06"
+  },
+  {
+    "class": "T",
+    "form": "jsdoc",
+    "comment": "/** 幅（px） */",
+    "code": [
+      "width: number;"
+    ],
+    "wrap": "interface",
+    "source": "synthetic:jsdoc-T-07"
+  },
+  {
+    "class": "T",
+    "form": "jsdoc",
+    "comment": "/** 'admin'、'editor'、'viewer' のいずれか */",
+    "code": [
+      "export function setRole(role: string): void {}"
+    ],
+    "source": "synthetic:jsdoc-T-08"
+  },
+  {
+    "class": "T",
+    "form": "jsdoc",
+    "comment": "/** 省略できる */",
+    "code": [
+      "id: string;"
+    ],
+    "wrap": "interface",
+    "source": "synthetic:jsdoc-T-09"
+  },
+  {
+    "class": "T",
+    "form": "jsdoc",
+    "comment": "/** 読み取れなければ null を返す */",
+    "code": [
+      "export function parseDate(text: string): Date {}"
+    ],
+    "source": "synthetic:jsdoc-T-10"
+  },
+  {
+    "class": "T",
+    "form": "jsdoc",
+    "comment": "/** 経過時間（ミリ秒） */",
+    "code": [
+      "private elapsed = 0;"
+    ],
+    "wrap": "class",
+    "source": "synthetic:jsdoc-T-11"
+  },
+  {
+    "class": "M",
+    "form": "jsdoc",
+    "comment": "/** 利用者の要望で追加した、CSV の書き出し */",
+    "code": [
+      "export function exportCsv(rows: Row[]): string {}"
+    ],
+    "source": "synthetic:jsdoc-M-01"
+  },
+  {
+    "class": "M",
+    "form": "jsdoc",
+    "comment": "/** 見栄えをよくするために入れたアニメーション */",
+    "code": [
+      "export function fadeIn(el: HTMLElement): void {}"
+    ],
+    "source": "synthetic:jsdoc-M-02"
+  },
+  {
+    "class": "M",
+    "form": "jsdoc",
+    "comment": "/** パフォーマンスを改善するために作ったキャッシュ */",
+    "code": [
+      "export class ResultCache {}"
+    ],
+    "source": "synthetic:jsdoc-M-03"
+  },
+  {
+    "class": "M",
+    "form": "jsdoc",
+    "comment": "/** 営業チームの依頼で作った集計 */",
+    "code": [
+      "export function salesSummary(orders: Order[]): Summary {}"
+    ],
+    "source": "synthetic:jsdoc-M-04"
+  },
+  {
+    "class": "M",
+    "form": "jsdoc",
+    "comment": "/** 将来の拡張に備えて分けておいたインターフェース */",
+    "code": [
+      "export interface Storage {}"
+    ],
+    "source": "synthetic:jsdoc-M-05"
+  },
+  {
+    "class": "M",
+    "form": "jsdoc",
+    "comment": "/** デモに間に合わせるために急いで作った画面 */",
+    "code": [
+      "export function renderDemo(root: HTMLElement): void {}"
+    ],
+    "source": "synthetic:jsdoc-M-06"
+  },
+  {
+    "class": "H",
+    "form": "jsdoc",
+    "comment": "/** 再生速度。標準では遅く感じたので 1.25 に上げた */",
+    "code": [
+      "export const PLAYBACK_RATE = 1.25;"
+    ],
+    "source": "synthetic:jsdoc-H-01"
+  },
+  {
+    "class": "H",
+    "form": "jsdoc",
+    "comment": "/** v1 の API から移した関数。以前は utils.ts にあった */",
+    "code": [
+      "export function formatPrice(value: number): string {}"
+    ],
+    "source": "synthetic:jsdoc-H-02"
+  },
+  {
+    "class": "H",
+    "form": "jsdoc",
+    "comment": "/** #42 の修正で、引数の順番を入れ替えた */",
+    "code": [
+      "export function between(min: number, max: number, value: number): boolean {}"
+    ],
+    "source": "synthetic:jsdoc-H-03"
+  },
+  {
+    "class": "H",
+    "form": "jsdoc",
+    "comment": "/** もともと同期処理だったが、2023 年に非同期へ変えた */",
+    "code": [
+      "export async function loadConfig(): Promise<Config> {}"
+    ],
+    "source": "synthetic:jsdoc-H-04"
+  },
+  {
+    "class": "N",
+    "form": "jsdoc",
+    "comment": "/** 通知を出す。alert() は操作を止めてしまうので使わない */",
+    "code": [
+      "export function showToast(message: string): void {}"
+    ],
+    "source": "synthetic:jsdoc-N-01"
+  },
+  {
+    "class": "N",
+    "form": "jsdoc",
+    "comment": "/** フレームの間隔（ms）。実機は 16ms 前後だが、境界の値を正確に試せるよう 10ms にしている */",
+    "code": [
+      "export const FRAME_MS = 10;"
+    ],
+    "source": "synthetic:jsdoc-N-02"
+  },
+  {
+    "class": "N",
+    "form": "jsdoc",
+    "comment": "/** 日付の差を求める。日付ライブラリは入れない。必要なのは日数の差だけで、依存を増やすほどではない */",
+    "code": [
+      "export function daysBetween(a: Date, b: Date): number {}"
+    ],
+    "source": "synthetic:jsdoc-N-03"
+  },
+  {
+    "class": "N",
+    "form": "jsdoc",
+    "comment": "/** ID を作る。連番にはしない。複数の端末で同時に作ると衝突する */",
+    "code": [
+      "export function createId(): string {}"
+    ],
+    "source": "synthetic:jsdoc-N-04"
+  }
+]

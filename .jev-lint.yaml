@@ -1,0 +1,21 @@
+# このリポジトリで較正とテストをするときの設定。使う側のプロジェクトの設定例は README にある。
+# 接続先は環境変数 TYPESAFE_BASE_URL（d1-3B を載せた llama-server）で与える。
+model: d1-3b
+files: [corpus]
+rules:
+  comment-restates-code: on
+  jsdoc-restates-declaration: on
+  comment-motivation-belongs-in-commit: on
+  jsdoc-motivation-belongs-in-commit: on
+  comment-history-belongs-in-commit: on
+  comment-explains-why-not: on
+  jsdoc-contract-fits-in-type: on
+cache: none
+# 既定（1 リクエスト 256 問・同時 32 本）は、ローカルの llama-server（4 スロット・各 32K）の
+# KV を使い切って「Context size has been exceeded」の 500 を返させる。jev-lint はそれを
+# 再試行し続けて止まって見えるので、小さく分けて送る。
+batchSize: 16
+# 2 本でも動くが、テストのたびに GPU を占有して PC が重くなったので 1 本にしている（1 回 2 分ほど）。
+concurrency: 1
+# ルールごとの axis（file / rule）の指定は auto のときだけ効く。
+group: auto
