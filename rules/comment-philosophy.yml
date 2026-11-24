@@ -1,0 +1,199 @@
+# コメントの方針を、決定モデル（d1-3B などの Jev 互換モデル）で確かめるルール。
+#
+# 方針
+# - コメントに書くのは、知らずに触ると壊す理由（制約・順序・符号や単位の約束・外部の癖）と、
+#   採らなかった案とその理由（Why not）。
+# - 変更の動機や経緯（Why）は、コミットメッセージに書く。コメントには書かない。
+# - コードや宣言の名前の言い直し（What）は書かない。名前や構造で表す。
+# - JSDoc に書くのは、ツールが理解するタグ（@deprecated など）と、呼び出す側が守る契約
+#   （呼ぶ順番・副作用・並行性・特別な値の意味など）だけ。名前や簡単な型で表せる契約は、そちらへ移す。
+#   ただし、型を作り込みすぎてまで移さない（その判断は人がするので、そのルールは advisory にしてある）。
+#
+# 問いの文面としきい値は、corpus/cases.json のラベル付きの合成事例で決めた。文面や事例を変えたら
+# `pnpm calibrate` で較正し直し、`pnpm test` で精度の下限を確かめる。事例が少ないので、しきい値は目安。
+#
+# 実測で分かった d1-3B と jev-lint の癖
+# - 否定形の問い（「理由を含まないか」）では What と Why が分かれない。肯定形で問い、
+#   指摘したい状態を criteria.true に置く。
+# - subject: enclosing にすると、問いごとに関数全体が「判定対象のコード」として送られる。モデルが関数を
+#   判定してしまい分離が落ち、入力トークンも数十倍になった。判定対象は小さくし、周りは state で渡す。
+# - 宣言を判定対象にすると、メソッドの本体まで送られる。JSDoc のルールは JSDoc 自体を判定対象にし、
+#   宣言からは名前だけを NAME として渡す。オブジェクトのプロパティ（pair）は名前が key なので掛からない。
+# - 同じリクエストに別のルールの問いが混ざると、点がずれた。JSDoc のルールは axis: rule で分ける。
+#   axis の指定は、設定の group: auto のときだけ効く。
+# - 同じ文面でも、ルール ID を変えると点が平均 0.07 ずれた（ID も state に入るため、と推測。未確認）。
+#   ID を変えたら較正し直す。
+
+- id: comment-restates-code
+  languages: [TypeScript, Tsx]
+  kind: noul
+  subject: node
+  state: local
+  # What かどうかは「コメントとコードの比較」なので、コメント直後の文を判定対象にし、
+  # コメントは DOC として渡す。関数本体の中に限るのは、変数やフィールドの説明（値の意味・単位）を
+  # What と区別できなかったため。
+  rule:
+    all:
+      - any:
+          - kind: if_statement
+          - kind: for_statement
+          - kind: for_in_statement
+          - kind: while_statement
+          - kind: try_statement
+          - kind: switch_statement
+          - kind: return_statement
+          - kind: expression_statement
+          - kind: lexical_declaration
+      - follows:
+          kind: comment
+          pattern: $DOC
+          not:
+            regex: '^\s*/\*|^\s*//\s*(biome-ignore|@ts-|eslint|prettier-ignore|TODO|FIXME|-{3,}|={3,})'
+      - inside:
+          kind: statement_block
+          stopBy: end
+  axis: file
+  ask: Does the comment captured as DOC give a reason, constraint or background that this code cannot show?
+  criteria:
+    "true": DOC is only a heading, a label or a paraphrase of this code.
+    "false": DOC states a reason, a warning, a sign or direction convention, a unit, an ordering requirement, an API quirk, or a rejected alternative.
+  # 変数の意味や単位だけを書いた行コメント（// タイムアウト（ms））も、名前で表せるので What として指摘する。
+  threshold: 0.79
+  severity: warning
+
+- id: jsdoc-restates-declaration
+  languages: [TypeScript, Tsx]
+  kind: noul
+  subject: node
+  state: bare
+  axis: rule
+  # 宣言の名前の位置は、宣言の種類で深さが違う（export → 宣言 → 名前、const → 宣言子 → 名前）。
+  # has に stopBy: end と field: name を組み合わせると深い名前を拾わないので、段ごとに辿る。
+  utils: &jsdoc_utils
+    named:
+      any:
+        - has: {field: name, pattern: $NAME}
+        - has: {kind: variable_declarator, has: {field: name, pattern: $NAME}}
+  rule: &jsdoc
+    kind: comment
+    pattern: $DOC
+    regex: '^/\*\*'
+    precedes:
+      any:
+        - kind: export_statement
+          has: {field: declaration, matches: named}
+        - any:
+            - kind: lexical_declaration
+            - kind: function_declaration
+            - kind: class_declaration
+            - kind: interface_declaration
+            - kind: type_alias_declaration
+            - kind: method_definition
+            - kind: public_field_definition
+            - kind: property_signature
+            - kind: method_signature
+          matches: named
+  ask: Does this JSDoc tell the reader anything that the name captured as NAME does not already say?
+  criteria:
+    "true": The JSDoc only repeats, in words, what the name NAME already says.
+    "false": The JSDoc adds a reason, a contract (when or how to call it, what happens in an edge case), a unit, a range, a side effect, a pitfall or a rejected alternative.
+  # 単位だけを足した JSDoc（/** 幅（px） */）も高めに出る。名前へ移せば消せるので、実害は小さい。
+  threshold: 0.65
+  severity: warning
+
+- id: jsdoc-contract-fits-in-type
+  languages: [TypeScript, Tsx]
+  kind: noul
+  subject: node
+  state: bare
+  axis: rule
+  utils: *jsdoc_utils
+  rule: *jsdoc
+  # モデルには宣言の名前しか渡らず、今の型は見えない。型がすでに契約を表していても指摘しうるので、
+  # 「移せるかもしれない」候補の一覧として扱う。移すと型の作り込みすぎになるかは人が判断する。
+  ask: Could the contract this JSDoc states be carried by the name captured as NAME or by an ordinary type annotation, without building new type machinery?
+  criteria:
+    "true": Yes. A unit suffix in the name (timeoutMs), a string literal union, an optional or nullable type, a readonly array, or a clearer boolean name would carry it, and the JSDoc would then be unnecessary.
+    "false": No. It states something an ordinary type cannot carry, such as call order, timing, side effects, concurrency, cost, or a rule that would need branded or computed types; or it states no contract at all.
+  # 点は全体に低く出るが、型に移せる契約と移せない契約は 0.35 前後できれいに分かれた。
+  threshold: 0.35
+  category: advisory
+  severity: hint
+
+- id: comment-motivation-belongs-in-commit
+  languages: [TypeScript, Tsx]
+  kind: noul
+  subject: node
+  state: local
+  rule:
+    kind: comment
+    pattern: $DOC
+    not:
+      regex: '^\s*/\*|^\s*//\s*(biome-ignore|@ts-|eslint|prettier-ignore|TODO|FIXME|-{3,}|={3,})'
+  # 「Why か」と「知らないと壊すか」を別々に問うと 1 ルールで表せないので、
+  # 「動機だけで、無視しても壊れないか」を 1 文で問う。
+  axis: file
+  ask: Does this comment explain the purpose or motivation of the code, such that a developer could ignore it and still change the code without causing a defect?
+  criteria:
+    "true": It states why a feature or behaviour was wanted (a goal, a user request, a design intent, a hypothesis to test), but warns about no constraint, pitfall or rejected alternative.
+    "false": It warns about a constraint, a pitfall, an ordering, a convention, an external quirk or a rejected alternative, or it gives no reason at all.
+  threshold: 0.6
+  severity: warning
+
+- id: jsdoc-motivation-belongs-in-commit
+  languages: [TypeScript, Tsx]
+  kind: noul
+  subject: node
+  state: bare
+  axis: rule
+  utils: *jsdoc_utils
+  rule: *jsdoc
+  # 「呼ぶ前に〜」のような使い方の約束まで動機と取り違えやすい。「誰が求めたか・何を良くするために
+  # 作ったか」の話かを問う形が、誤検出なしで半分ほどを拾った（ほかの 3 案は誤検出が多いか、拾えなかった）。
+  ask: Does this JSDoc tell the story of why the declaration was made (who asked for it, what it was meant to improve, a deadline), rather than how to use it?
+  criteria:
+    "true": It says who wanted the declaration or what it was made to improve. It says nothing a caller must do, avoid or expect.
+    "false": It tells a caller how to use the declaration correctly (when to call it, what it returns, what to avoid, a unit, a side effect, a rejected alternative), or it only names the declaration.
+  threshold: 0.74
+  # アプリの実コードで試すと、上位は名前の言い直しで、動機ではなかった。CI を止めない一覧にしておく。
+  category: advisory
+  severity: info
+
+- id: comment-history-belongs-in-commit
+  languages: [TypeScript, Tsx]
+  kind: noul
+  subject: node
+  state: local
+  rule:
+    kind: comment
+    pattern: $DOC
+    not:
+      regex: '^\s*//\s*(biome-ignore|@ts-|eslint|prettier-ignore|TODO|FIXME|-{3,}|={3,})'
+  axis: file
+  ask: Is this comment mainly about the history of a change rather than about the current code?
+  criteria:
+    "true": It describes a past change, a previous behaviour or an old implementation (what was replaced, fixed, added or moved), which belongs in the commit message.
+    "false": It describes the current code, or a reason that stays true as long as the code stays as it is.
+  threshold: 0.85
+  severity: warning
+
+- id: comment-explains-why-not
+  languages: [TypeScript, Tsx]
+  kind: noul
+  subject: node
+  state: local
+  rule:
+    kind: comment
+    pattern: $DOC
+    not:
+      regex: '^\s*//\s*(biome-ignore|@ts-|eslint|prettier-ignore|TODO|FIXME|-{3,}|={3,})'
+  axis: file
+  ask: Does this comment say that some alternative was deliberately not used, and why?
+  criteria:
+    "true": It names an approach that was rejected or avoided and gives the reason.
+    "false": It does not discuss any rejected or avoided alternative.
+  # 見落とすより拾いすぎるほうがよい一覧なので、低めに置く。
+  threshold: 0.66
+  # 指摘ではなく、残すべきコメントの一覧として見る（CI を止めない）。
+  category: advisory
+  severity: info
