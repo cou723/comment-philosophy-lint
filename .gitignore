@@ -1,0 +1,6 @@
+node_modules/
+# jev-lint の判定キャッシュ
+.jev-lint/verdicts/
+# 生成物（corpus/build.ts が cases.json から作る）。
+# corpus/comments.ts も生成物だが、jev-lint は .gitignore の対象を読まないので、ここには入れない。
+corpus/labels.json

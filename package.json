@@ -1,0 +1,33 @@
+{
+  "name": "comment-philosophy-lint",
+  "version": "0.1.0",
+  "description": "コメントに書くべきこと（壊す理由・Why not）と書くべきでないこと（What・経緯・動機）を、jev-lint と決定モデルで確かめるルール集",
+  "license": "UNLICENSED",
+  "type": "module",
+  "files": [
+    "rules"
+  ],
+  "scripts": {
+    "corpus": "node corpus/build.ts",
+    "test": "node corpus/build.ts && node --test test/*.test.ts",
+    "test:offline": "node corpus/build.ts && node --test test/offline.test.ts",
+    "typecheck": "tsc --noEmit",
+    "calibrate": "node corpus/build.ts && jev-lint calibrate corpus -R rules --labels corpus/labels.json --repeat 2"
+  },
+  "peerDependencies": {
+    "jev-lint": "^0.10.0"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.5.3",
+      "onFail": "download"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "jev-lint": "^0.10.0",
+    "typescript": "^5.9.3",
+    "yaml": "^2.9.1"
+  }
+}
