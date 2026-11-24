@@ -1,0 +1,9 @@
+{
+  "comment-restates-code": { "precision": 0.9, "recall": 0.85 },
+  "jsdoc-restates-declaration": { "precision": 0.65, "recall": 0.55 },
+  "jsdoc-contract-fits-in-type": { "precision": 0.8, "recall": 0.8 },
+  "comment-motivation-belongs-in-commit": { "precision": 0.9, "recall": 0.75 },
+  "jsdoc-motivation-belongs-in-commit": { "precision": 0.5, "recall": 0.33 },
+  "comment-history-belongs-in-commit": { "precision": 0.8, "recall": 0.8 },
+  "comment-explains-why-not": { "precision": 0.8, "recall": 0.6 }
+}
