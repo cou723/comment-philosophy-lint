@@ -2,7 +2,7 @@
   "name": "comment-philosophy-lint",
   "version": "0.1.0",
   "description": "コメントに書くべきこと（壊す理由・Why not）と書くべきでないこと（What・経緯・動機）を、jev-lint と決定モデルで確かめるルール集",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "type": "module",
   "files": [
     "rules"
